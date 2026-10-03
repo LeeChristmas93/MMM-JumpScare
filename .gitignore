@@ -1,0 +1,7 @@
+node_modules/
+.npm-cache/
+.preview/
+assets/images/
+assets/audio/
+assets/video/
+*.log

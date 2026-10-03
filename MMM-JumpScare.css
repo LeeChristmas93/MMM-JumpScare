@@ -1,0 +1,30 @@
+.jumpscare-placeholder { display: none; }
+.jumpscare-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse, #590808 0%, #140000 55%, #000 100%);
+  opacity: 0;
+  transition: opacity var(--jumpscare-fade, 80ms) linear;
+}
+.jumpscare-overlay.jumpscare-visible { opacity: 1; }
+.jumpscare-overlay .jumpscare-boo {
+  color: #c91c1c;
+  font: bold clamp(80px, 24vw, 360px)/1 sans-serif;
+  text-shadow: 0 0 24px #710000;
+}
+.jumpscare-overlay .jumpscare-boo[hidden] { display: none; }
+.jumpscare-overlay .jumpscare-media { position: absolute; width: 100%; height: 100%; object-fit: contain; }
+.jumpscare-overlay.scare-ghost { background: radial-gradient(ellipse, #292929, #000); }
+.jumpscare-overlay.scare-ghost .jumpscare-boo { color: #ddd; }
+.jumpscare-overlay.scare-static { background: repeating-linear-gradient(0deg, #140000 0 3px, #380808 3px 6px); }
+.jumpscare-overlay.jumpscare-flash .jumpscare-boo { animation: jumpscare-pulse 180ms ease-out 2; }
+@keyframes jumpscare-pulse { 50% { transform: scale(1.08); color: #f14a4a; } }
+@media (prefers-reduced-motion: reduce) {
+  .jumpscare-overlay.jumpscare-flash .jumpscare-boo { animation: none; }
+}

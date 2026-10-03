@@ -1,0 +1,9 @@
+{
+  "name": "mmm-jumpscare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Controlled local Halloween overlay for MagicMirror²",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": { "check": "node --check MMM-JumpScare.js && node --check node_helper.js", "test": "node test/safety.test.js" },
+  "dependencies": { "mqtt": "5.10.4" }
+}
